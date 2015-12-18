@@ -1,49 +1,142 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/chronometer.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <div>
+    <div id="clockface"></div>
+    <div id="clockborder"></div>
+    <div class="hoursmark"><div id="mark0"><div></div><span>0</span></div></div>
+    <div class="hoursmark"><div id="mark1"><div></div><span>1</span></div></div>
+    <div class="hoursmark"><div id="mark2"><div></div><span>2</span></div></div>
+    <div class="hoursmark"><div id="mark3"><div></div><span>3</span></div></div>
+    <div class="hoursmark"><div id="mark4"><div></div><span>4</span></div></div>
+    <div class="hoursmark"><div id="mark5"><div></div><span>5</span></div></div>
+    <div class="hoursmark"><div id="mark6"><div></div><span>6</span></div></div>
+    <div class="hoursmark"><div id="mark7"><div></div><span>7</span></div></div>
+    <div class="hoursmark"><div id="mark8"><div></div><span>8</span></div></div>
+    <div class="hoursmark"><div id="mark9"><div></div><span>9</span></div></div>
+    <div class="hoursmark"><div id="mark10"><div></div><span>10</span></div></div>
+    <div class="hoursmark"><div id="mark11"><div></div><span>11</span></div></div>
+    <div class="hoursmark"><div id="mark12"><div></div><span>12</span></div></div>
+    <div class="hoursmark"><div id="mark13"><div></div><span>13</span></div></div>
+    <div class="hoursmark"><div id="mark14"><div></div><span>14</span></div></div>
+    <div class="hoursmark"><div id="mark15"><div></div><span>15</span></div></div>
+    <div class="hoursmark"><div id="mark16"><div></div><span>16</span></div></div>
+    <div class="hoursmark"><div id="mark17"><div></div><span>17</span></div></div>
+    <div class="hoursmark"><div id="mark18"><div></div><span>18</span></div></div>
+    <div class="hoursmark"><div id="mark19"><div></div><span>19</span></div></div>
+    <div class="hoursmark"><div id="mark20"><div></div><span>20</span></div></div>
+    <div class="hoursmark"><div id="mark21"><div></div><span>21</span></div></div>
+    <div class="hoursmark"><div id="mark22"><div></div><span>22</span></div></div>
+    <div class="hoursmark"><div id="mark23"><div></div><span>23</span></div></div>
+    <div class="secondsmark"><div id="mark0"><div></div></div></div>
+    <div class="secondsmark"><div id="mark1"><div></div></div></div>
+    <div class="secondsmark"><div id="mark2"><div></div></div></div>
+    <div class="secondsmark"><div id="mark3"><div></div></div></div>
+    <div class="secondsmark"><div id="mark4"><div></div></div></div>
+    <div class="secondsmark"><div id="mark5"><div></div></div></div>
+    <div class="secondsmark"><div id="mark6"><div></div></div></div>
+    <div class="secondsmark"><div id="mark7"><div></div></div></div>
+    <div class="secondsmark"><div id="mark8"><div></div></div></div>
+    <div class="secondsmark"><div id="mark9"><div></div></div></div>
+    <div class="secondsmark"><div id="mark10"><div></div></div></div>
+    <div class="secondsmark"><div id="mark11"><div></div></div></div>
+    <div class="secondsmark"><div id="mark12"><div></div></div></div>
+    <div class="secondsmark"><div id="mark13"><div></div></div></div>
+    <div class="secondsmark"><div id="mark14"><div></div></div></div>
+    <div class="secondsmark"><div id="mark15"><div></div></div></div>
+    <div class="secondsmark"><div id="mark16"><div></div></div></div>
+    <div class="secondsmark"><div id="mark17"><div></div></div></div>
+    <div class="secondsmark"><div id="mark18"><div></div></div></div>
+    <div class="secondsmark"><div id="mark19"><div></div></div></div>
+    <div class="secondsmark"><div id="mark20"><div></div></div></div>
+    <div class="secondsmark"><div id="mark21"><div></div></div></div>
+    <div class="secondsmark"><div id="mark22"><div></div></div></div>
+    <div class="secondsmark"><div id="mark23"><div></div></div></div>
+    <div class="secondsmark"><div id="mark24"><div></div></div></div>
+    <div class="secondsmark"><div id="mark25"><div></div></div></div>
+    <div class="secondsmark"><div id="mark26"><div></div></div></div>
+    <div class="secondsmark"><div id="mark27"><div></div></div></div>
+    <div class="secondsmark"><div id="mark28"><div></div></div></div>
+    <div class="secondsmark"><div id="mark29"><div></div></div></div>
+    <div class="secondsmark"><div id="mark30"><div></div></div></div>
+    <div class="secondsmark"><div id="mark31"><div></div></div></div>
+    <div class="secondsmark"><div id="mark32"><div></div></div></div>
+    <div class="secondsmark"><div id="mark33"><div></div></div></div>
+    <div class="secondsmark"><div id="mark34"><div></div></div></div>
+    <div class="secondsmark"><div id="mark35"><div></div></div></div>
+    <div class="secondsmark"><div id="mark36"><div></div></div></div>
+    <div class="secondsmark"><div id="mark37"><div></div></div></div>
+    <div class="secondsmark"><div id="mark38"><div></div></div></div>
+    <div class="secondsmark"><div id="mark39"><div></div></div></div>
+    <div class="secondsmark"><div id="mark40"><div></div></div></div>
+    <div class="secondsmark"><div id="mark41"><div></div></div></div>
+    <div class="secondsmark"><div id="mark42"><div></div></div></div>
+    <div class="secondsmark"><div id="mark43"><div></div></div></div>
+    <div class="secondsmark"><div id="mark44"><div></div></div></div>
+    <div class="secondsmark"><div id="mark45"><div></div></div></div>
+    <div class="secondsmark"><div id="mark46"><div></div></div></div>
+    <div class="secondsmark"><div id="mark47"><div></div></div></div>
+    <div class="secondsmark"><div id="mark48"><div></div></div></div>
+    <div class="secondsmark"><div id="mark49"><div></div></div></div>
+    <div class="secondsmark"><div id="mark50"><div></div></div></div>
+    <div class="secondsmark"><div id="mark51"><div></div></div></div>
+    <div class="secondsmark"><div id="mark52"><div></div></div></div>
+    <div class="secondsmark"><div id="mark53"><div></div></div></div>
+    <div class="secondsmark"><div id="mark54"><div></div></div></div>
+    <div class="secondsmark"><div id="mark55"><div></div></div></div>
+    <div class="secondsmark"><div id="mark56"><div></div></div></div>
+    <div class="secondsmark"><div id="mark57"><div></div></div></div>
+    <div class="secondsmark"><div id="mark58"><div></div></div></div>
+    <div class="secondsmark"><div id="mark59"><div></div></div></div>
+    <div id="hourshand"><div></div></div>
+    <div id="minuteshand"><div></div></div>
+    <div id="secondshand"><div></div></div>
+    </div>
+    <script>
+    	$(document).ready(function () {
+    	  
+    	  console.log("Clock ready!");
+    	  
+    	  for (var t = 0; t < 60; t++) {
+    	    $('.secondsmark > div#mark' + t).parent().css("transform", "rotate(" + (-90 + t * 6) + "deg)");
+    	    if (t % 5 === 0) {
+    	      $('.secondsmark > div#mark' + t + ' > div').css("width", "12px");
+    	    }
+    	  }
+    	  
+    	  for (var t = 0; t < 24; t++) {
+    	    $('.hoursmark > div#mark' + t).parent().css("transform", "rotate(" + (-90 + t * 15) + "deg)");
+    	    $('.hoursmark > div#mark' + t + ' > span').css("transform", "rotate(" + (-(-90 + t * 15)) + "deg)");
+    	  }
+
+    	  setInterval(function() {
+    	    var time = new Date();
+
+    	    var secondsDeg = (-90 + 
+    	    	(6 * time.getSeconds()) + 
+    	    	(0.006 * time.getMilliseconds())
+    	    );
+    	    $('#secondshand').css("transform", "rotate(" + secondsDeg + "deg)");
+
+    	    var minutesDeg = (-90 + 
+    	    	(6 * time.getMinutes()) +
+    	    	(0.1 * time.getSeconds()) +
+    	    	(0.0001 * time.getMilliseconds())
+    	    );
+    	    $('#minuteshand').css("transform", "rotate(" + minutesDeg + "deg)");
+
+    	    var hoursDeg = (-90 + 
+    	    	(15 * time.getHours()) + 
+    	    	(0.25 * time.getMinutes()) +
+    	    	(0.0042 * time.getSeconds())
+    	    );
+    	    $('#hourshand').css("transform", "rotate(" + hoursDeg + "deg)");
+
+    	  }, 10);
+    	});
+    </script>
+  </body>
 </html>
