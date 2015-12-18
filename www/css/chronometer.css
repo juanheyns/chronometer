@@ -1,0 +1,128 @@
+      body {
+        margin: 50px;
+        color: white;
+        font-family: Sans-serif;
+        background-color: black;
+      }
+      body > div {
+        position: absolute;
+      }
+      #clockface {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 800px;
+        height: 800px;
+        background-color: black;
+        border-radius: 400px;
+      }
+      #clockborder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 796px;
+        height: 796px;
+        border: 2px solid #707070;
+        border-radius: 400px;
+      }
+      .hoursmark {
+        height: 4px;
+        width: 4px;
+        position: absolute;
+        top: 398px;
+        left: 398px;
+      }
+      .hoursmark > div {
+      	height: 4px;
+      	width: 240px;
+      }
+      .hoursmark > div > div {
+        position: absolute;
+        left: 235px;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: white;
+      }
+      .hoursmark > div > span {
+        position: absolute;
+        left: 250px;
+        top: -7px;
+      	display: block;
+      }
+      .secondsmark {
+        height: 4px;
+        width: 4px;
+        position: absolute;
+        top: 398px;
+        left: 398px;
+      }
+      .secondsmark > div {
+      	height: 4px;
+      	width: 390px;
+      }
+      .secondsmark > div > div {
+        position: absolute;
+        left: 370px;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: red;
+      }
+      #hourshand {
+        height: 48px;
+        width: 48px;
+        background-color: darkGray;
+        border-radius: 24px;
+        position: absolute;
+        top: 376px;
+        left: 376px;
+        transform: rotate(-90deg);
+      }
+      #hourshand div {
+      	position: absolute; 
+      	top: 16px; 
+      	left: 16px; 
+      	height: 16px; 
+      	border-radius: 8px;
+      	width:250px; 
+      	background: darkGray;
+      }
+      #minuteshand {
+        height: 24px;
+        width: 24px;
+        border-radius: 12px;
+        position: absolute;
+        background: gray;
+        top: 388px;
+        left: 388px;
+        transform: rotate(-90deg);
+      }
+      #minuteshand div {
+      	position: absolute; 
+      	top: 8px; 
+      	left: 8px; 
+      	height: 8px; 
+      	border-radius: 4px;
+      	width: 330px;
+      	background: gray;
+      }
+      #secondshand {
+        height: 12px;
+        width: 12px;
+        border-radius: 6px;
+        position: absolute;
+        background: lightGray;
+        top: 394px;
+        left: 394px;
+        transform: rotate(-90deg);
+      }
+      #secondshand div {
+      	position: absolute; 
+      	top: 4px; 
+      	left: 4px; 
+      	height: 4px; 
+      	border-radius: 2px;
+      	width:380px; 
+      	background: lightGray;
+      }
